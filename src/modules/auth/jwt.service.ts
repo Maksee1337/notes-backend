@@ -10,7 +10,7 @@ export class JwtService {
             ...user,
             refreshToken: undefined,
             password: undefined,
-            exp: Math.floor(Date.now() / 1000) + (60 * 60)
+            exp: Math.floor(Date.now() / 1000) + (30)
         }
     }
     public async getTokens(user: IUser) {

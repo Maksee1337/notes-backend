@@ -6,7 +6,7 @@ import * as process from "process";
 export class RefreshTokenGuard implements CanActivate{
     canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
         const request = context.switchToHttp().getRequest();
-        const token = request.body.token;
+        const token = request.body.refreshToken;
         if (!token) {
             throw new UnauthorizedException();
         }
